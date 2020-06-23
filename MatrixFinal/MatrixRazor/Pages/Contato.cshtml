@@ -1,0 +1,97 @@
+﻿@page
+@model ContatoModel
+@*
+    <form action="contato" method="post">
+        <label for="titulo">Título</label><br />
+        <input id="titulo" name="titulo" type="text" placeholder="Informe um título"/><br />
+        <label for="texto">Mensagem</label><br />
+        <textarea id="texto" name="texto" cols="30" rows="9" placeholder="Digite a mensagem..."></textarea><br />
+        <label for="nome">Nome</label><br />
+        <input id="nome" name="nome" type="text" placeholder="Informe seu nome"/><br />
+        <label for="email">E-mail</label><br />
+        <input id="email" name="email" type="email" placeholder="Informe seu endereço de e-mail"/><br />
+        <button type="submit">Enviar Mensagem</button>
+    </form>
+*@
+
+@*
+<form method="post">
+    <label asp-for="Mensagem.Titulo"></label><br />
+    <input asp-for="Mensagem.Titulo" type="text" placeholder="Informe um título"/><br />
+    <label asp-for="Mensagem.Texto">Mensagem</label><br />
+    <textarea asp-for="Mensagem.Texto" cols="30" rows="9" placeholder="Digite a mensagem..."></textarea><br />
+    <label asp-for="Mensagem.Nome">Nome</label><br />
+    <input asp-for="Mensagem.Nome" type="text" placeholder="Informe seu nome" /><br />
+    <label asp-for="Mensagem.Email">E-mail</label><br />
+    <input asp-for="Mensagem.Email" type="email" placeholder="Informe seu endereço de e-mail" /><br />
+    <button type="submit">Enviar Mensagem</button>
+</form>
+
+*@
+
+<!-- ***** Início do formulário de contato ***** -->
+<section class="section-margin">
+        <div class="container">
+            <div class="d-none d-sm-block mb-5 pb-4">
+
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Entrar em contato</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <form class="form-contact contact_form" method="post" id="contactForm" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input asp-for="Mensagem.Titulo" type="text" class="form-control"  placeholder="Informe um título" />
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea asp-for="Mensagem.Texto" cols="30" rows="9" class="form-control w-100" placeholder="Digite a mensagem..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input asp-for="Mensagem.Nome" type="text" class="form-control" placeholder="Informe seu nome" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input asp-for="Mensagem.Email" type="email" class="form-control" placeholder="Informe seu endereço de e-mail" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <button type="submit" class="button button-contactForm">Enviar Mensagem</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-home"></i></span>
+                            <div class="media-body">
+                                <h3>Curitiba, Paraná, Brasil</h3>
+                                <p>Rua da Paz, 91770</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                            <div class="media-body">
+                                <h3><a href="tel:454545654">+55 (41) 99999-9999</a></h3>
+                                <p>Seg a Sex das 9h às 18h</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-email"></i></span>
+                            <div class="media-body">
+                                <h3><a href="mailto:support@colorlib.com">contato@razor.com</a></h3>
+                                <p>Aguardamos contato!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+<!-- ***** Fim do formulário de contato ***** -->

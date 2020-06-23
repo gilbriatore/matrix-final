@@ -1,0 +1,35 @@
+﻿@page
+@model MatrixRazor.Pages.pgTrilha.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section class="section-margin">
+    <div class="container">
+        <div>
+            <h2 class="title">Trilha</h2>
+
+
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Trilha.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Trilha.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Trilha.Descricao)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Trilha.Descricao)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-page="./Edit" asp-route-id="@Model.Trilha.Id">Editar</a> |
+            <a asp-page="./Index">Voltar</a>
+        </div>
+    </div>
+</section>

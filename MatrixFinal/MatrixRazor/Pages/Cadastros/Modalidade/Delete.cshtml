@@ -1,0 +1,39 @@
+﻿@page
+@model MatrixRazor.Pages.pgModalidade.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<section class="section-margin">
+    <div class="container">
+
+        <h2 class="title">Excluir modalidade</h2>
+        <div>
+            <h3>Você tem certeza que deseja excluir este registro?</h3>
+
+
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Modalidade.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Modalidade.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Modalidade.Descricao)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Modalidade.Descricao)
+                </dd>
+            </dl>
+
+            <form method="post">
+                <input type="hidden" asp-for="Modalidade.Id" />
+                <input type="submit" value="Confirmar" class="btn btn-danger" /> |
+                <a asp-page="./Index">Voltar</a>
+            </form>
+        </div>
+    </div>
+</section>

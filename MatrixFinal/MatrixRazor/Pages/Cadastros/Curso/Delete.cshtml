@@ -1,0 +1,63 @@
+﻿@page
+@model MatrixRazor.Pages.pgCurso.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<section class="section-margin">
+    <div class="container">
+
+        <h2 class="title">Excluir curso</h2>
+        <div>
+            <h3>Você tem certeza que deseja excluir este registro?</h3>
+
+
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.Descricao)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.Descricao)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.PercMaxAtividadeDistancia)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.PercMaxAtividadeDistancia)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.CargaHorasMinEstagio)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.CargaHorasMinEstagio)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.CargaHorasMinCurso)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.CargaHorasMinCurso)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.PercMaxEstagioAC)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.PercMaxEstagioAC)
+                </dd>
+            </dl>
+
+            <form method="post">
+                <input type="hidden" asp-for="Curso.Id" />
+                <input type="submit" value="Confirmar" class="btn btn-danger" /> |
+                <a asp-page="./Index">Voltar</a>
+            </form>
+        </div>
+    </div>
+</section>

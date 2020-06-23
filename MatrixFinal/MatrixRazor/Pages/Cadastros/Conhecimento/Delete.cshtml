@@ -1,0 +1,41 @@
+﻿@page
+@model MatrixRazor.Pages.pgConhecimento.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<section class="section-margin">
+    <div class="container">
+
+        <h2 class="title">Excluir conhecimento</h2>
+        <div>
+            <h3>Você tem certeza que deseja excluir este registro?</h3>
+
+
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Conhecimento.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Conhecimento.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Conhecimento.Descricao)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Conhecimento.Descricao)
+                </dd>
+            </dl>
+
+            <form method="post">
+                <input type="hidden" asp-for="Conhecimento.Id" />
+                <input type="submit" value="Confirmar" class="btn btn-danger" /> |
+                <a asp-page="./Index">Voltar</a>
+            </form>
+        </div>
+    </div>
+</section>

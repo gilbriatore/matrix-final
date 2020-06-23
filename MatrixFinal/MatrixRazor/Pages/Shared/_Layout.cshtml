@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- ***** Início do cabeçalho da página HTML ***** -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Razor - Home</title>
+
+    <link rel="icon" href="~/img/Fevicon.png" type="image/png">
+    <link rel="stylesheet" href="~/js/vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/js/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="~/js/vendors/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="~/js/vendors/linericon/style.css">
+    <link rel="stylesheet" href="~/js/vendors/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/js/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/js/vendors/flat-icon/font/flaticon.css">
+    @*<link rel="stylesheet" href="~/js/vendors/nice-select/nice-select.css">*@
+    <link rel="stylesheet" href="~/css/style.css?v=@Guid.NewGuid().ToString()">
+
+</head>
+<!-- ***** Fim do cabeçalho da página HTML ***** -->
+<!-- *****  Início do corpo HTML ***** -->
+<body class="bg-shape">
+
+    <!-- ***** Início do topo da página ***** -->
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container box_1620">
+                    <a class="navbar-brand logo_h" href="index.html"><img src="~/img/logo.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- ***** Início dos itens do menu principal ***** -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav justify-content-end">
+
+                            <li class="nav-item active"><a class="nav-link" href="~/Index">Home</a></li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">Cadastros</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <ul style="height: 500px; overflow: auto">
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Atitude">Atitude</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Atividade">Atividade</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Bloom">Bloom</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Competencia">Competência</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Conhecimento">Conhecimento</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Conteudo">Conteúdo</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Curso">Curso</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/DCN">DCN</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Diretriz">Diretriz</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Disciplina">Disciplina</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Escola">Escola</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Habilidade">Habilidade</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Matriz">Matriz</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Modalidade">Modalidade</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Papel">Papel</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Perfil">Perfil</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Periodo">Periodo</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/TipoDeCurso">Tipo &#100;e &#99;urso</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Trilha">Trilha</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Cadastros/Unidade">Unidade</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>}
+                            <li class="nav-item"><a class="nav-link" href="~/Contato">Contato</a></li>
+                            <li class="nav-item"><a class="nav-link" href="~/Sobre">Sobre</a></li>
+                            <partial name="_LoginPartial" />
+                        </ul>
+                        
+                    </div>
+                    <!-- ***** Fim dos itens do menu principal ***** -->
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- ***** Fim do topo da página  ***** -->
+
+    @RenderBody()
+
+    <!-- ***** Início do rodapé ***** -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6>Sobre</h6>
+                        <p>
+                            O mundo está tão agitado que as pessoas não lêem mais uma página de informações, preferem ver uma apresentação para entender as coisas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6>Links</h6>
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Contato</a></li>
+                                    <li><a href="#">Sobre</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @RenderSection("Noticias", required: false)
+
+                <div class="col-lg-3  col-md-6 col-sm-6">
+                    <div class="single-footer-widget mail-chimp">
+                        <h6 class="mb-20">Lugares</h6>
+                        <ul class="instafeed d-flex flex-wrap">
+                            <li><img src="~/img/instagram/i1.jpg" alt=""></li>
+                            <li><img src="~/img/instagram/i2.jpg" alt=""></li>
+                            <li><img src="~/img/instagram/i3.jpg" alt=""></li>
+                            <li><img src="~/img/instagram/i4.jpg" alt=""></li>
+                            <li><img src="~/img/instagram/i5.jpg" alt=""></li>
+                            <li><img src="~/img/instagram/i6.jpg" alt=""></li>
+                            <li><img src="~/img/instagram/i7.jpg" alt=""></li>
+                            <li><img src="~/img/instagram/i8.jpg" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <p class="col-lg-8 col-sm-12 footer-text m-0 text-center text-lg-left">
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script>
+                        Todos os direitos reservados | Este template foi desenvolvido pela <a href="https://colorlib.com" target="_blank">Colorlib</a> e está sendo utilizado apenas para fins didáticos.
+                    </p>
+                    <div class="col-lg-4 col-sm-12 footer-social text-center text-lg-right">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ***** Fim do rodapé ***** -->
+    <!-- ***** Início dos recursos JavaScript ***** -->
+    <script src="~/js/vendors/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="~/js/vendors/owl-carousel/owl.carousel.min.js"></script>
+    @*<script src="~/js/vendors/nice-select/jquery.nice-select.min.js"></script>*@
+    <script src="~/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/js/mail-script.js"></script>
+    <script src="~/js/skrollr.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <!-- ***** Fim dos recursos JavaScript ***** -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

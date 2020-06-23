@@ -1,0 +1,86 @@
+﻿@page
+@model MatrixRazor.Pages.pgCurso.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section class="section-margin">
+    <div class="container">
+        <div>
+            <h2 class="title">Curso</h2>
+
+
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.Descricao)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.Descricao)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.Escola)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.Escola.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.Modalidade)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.Modalidade.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.Tipo)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.Tipo.Nome)
+                </dd>
+                @foreach (var perfilDoCurso in Model.Curso.PerfisDoCurso)
+                {
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => perfilDoCurso.Perfil)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => perfilDoCurso.Perfil.Nome)
+                    </dd>
+                }
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.PercMaxAtividadeDistancia)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.PercMaxAtividadeDistancia)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.CargaHorasMinEstagio)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.CargaHorasMinEstagio)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.CargaHorasMinCurso)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.CargaHorasMinCurso)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Curso.PercMaxEstagioAC)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Curso.PercMaxEstagioAC)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-page="./Edit" asp-route-id="@Model.Curso.Id">Editar</a> |
+            <a asp-page="./Index">Voltar</a>
+        </div>
+    </div>
+</section>

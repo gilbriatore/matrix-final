@@ -1,0 +1,72 @@
+﻿@page
+@model MatrixRazor.Pages.pgCurso.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="section-margin">
+    <div class="container">
+
+        <h2 class="title">Cadastro de cursos</h2>
+
+        <p>
+            <a asp-page="Create">Incluir novo...</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Curso[0].Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Curso[0].Descricao)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Curso[0].PercMaxAtividadeDistancia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Curso[0].CargaHorasMinEstagio)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Curso[0].CargaHorasMinCurso)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Curso[0].PercMaxEstagioAC)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Curso)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descricao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PercMaxAtividadeDistancia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CargaHorasMinEstagio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CargaHorasMinCurso)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PercMaxEstagioAC)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id">Visualizar</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.Id">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

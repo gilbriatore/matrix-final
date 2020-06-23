@@ -1,0 +1,41 @@
+﻿@page
+@model MatrixRazor.Pages.pgBloom.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section class="section-margin">
+    <div class="container">
+        <div>
+            <h2 class="title">Nível de Bloom</h2>
+
+
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Bloom.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Bloom.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Bloom.Descricao)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Bloom.Descricao)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Bloom.Nivel)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Bloom.Nivel)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-page="./Edit" asp-route-id="@Model.Bloom.Id">Editar</a> |
+            <a asp-page="./Index">Voltar</a>
+        </div>
+    </div>
+</section>

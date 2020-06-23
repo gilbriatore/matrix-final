@@ -1,0 +1,41 @@
+﻿@page
+@model MatrixRazor.Pages.pgUnidade.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<section class="section-margin">
+    <div class="container">
+        <div>
+            <h2 class="title">Unidade</h2>
+
+
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Unidade.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Unidade.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Unidade.Descricao)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Unidade.Descricao)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Unidade.Codigo)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Unidade.Codigo)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-page="./Edit" asp-route-id="@Model.Unidade.Id">Editar</a> |
+            <a asp-page="./Index">Voltar</a>
+        </div>
+    </div>
+</section>
